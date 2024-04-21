@@ -3,12 +3,16 @@ import { NavigationRouter } from "./pages/routes/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "../config/reportWebVitals";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "../libs/shared/theme";
 
 function App() {
   return (
-    <Router>
-      <NavigationRouter loggedIn />
-    </Router>
+    <ChakraProvider theme={theme}>
+      <Router>
+        <NavigationRouter loggedIn />
+      </Router>
+    </ChakraProvider>
   );
 }
 
