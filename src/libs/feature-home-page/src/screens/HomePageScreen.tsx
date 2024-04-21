@@ -1,5 +1,7 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import { useTheme } from "../../../shared/theme";
+import { InsightSummary } from "../../../feature-home-cards";
+import { HomeList } from "../../../feature-home-list";
 
 export const HomePageScreen = () => {
   const { textStyles, colors } = useTheme();
@@ -17,11 +19,8 @@ export const HomePageScreen = () => {
         <Button>Log Out</Button>
       </Flex>
       <Flex gap="8">
-        <Flex>Most Streamed Artist</Flex>
-        <Flex>Most Played Song</Flex>
-        <Flex flex={1} border="1px black solid">
-          Your Top Songs
-        </Flex>
+        <InsightSummary />
+        <HomeList />
       </Flex>
     </Flex>
   );
