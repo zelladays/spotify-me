@@ -1,9 +1,24 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { HomeListItem } from "../home-list-item";
 import { useTheme } from "../../../../shared/theme";
+import { HomeListEmptyPlaceholder } from "../home-list-empty-placeholder";
+
+type MyResItem = {
+  name: string;
+  artists: [name: string];
+  externalUrls: {
+    spotify: string;
+  };
+};
+
+type MyRes = {
+  items: MyResItem[];
+};
 
 export const HomeList = () => {
   const { textStyles, colors } = useTheme();
+
+  const data = {} as MyRes;
 
   return (
     <Flex flexDirection="column" gap="4" width="100%">
@@ -16,26 +31,16 @@ export const HomeList = () => {
         </Text>
       </Flex>
       <Flex flexDirection="column">
-        <HomeListItem
-          title="1) Bryson Tiller - Don't"
-          linkUrl="https://google.com"
-        />
-        <HomeListItem
-          title="2) Bryson Tiller - Exchange"
-          linkUrl="https://google.com"
-        />
-        <HomeListItem
-          title="3) Bryson Tiller - Rambo"
-          linkUrl="https://google.com"
-        />
-        <HomeListItem
-          title="4) Bryson Tiller - Sorry Not Sorry"
-          linkUrl="https://google.com"
-        />
-        <HomeListItem
-          title="5) Bryson Tiller - Run Me Dry"
-          linkUrl="https://google.com"
-        />
+        {data.items?.length > 0 ? (
+          data.items?.map((item) => (
+            <HomeListItem
+              title={item.name}
+              linkUrl={item.externalUrls.spotify}
+            />
+          ))
+        ) : (
+          <HomeListEmptyPlaceholder />
+        )}
       </Flex>
     </Flex>
   );
