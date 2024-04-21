@@ -1,6 +1,7 @@
 export const colors = {
   brandBlack: "#121212",
   brandGreen: "#1DB954",
+  brandGreen_hover: "#1ed760",
   brandDarkGrey: "#212121",
   brandGrey: "#535353",
   brandLightGrey: "#B3B3B3",

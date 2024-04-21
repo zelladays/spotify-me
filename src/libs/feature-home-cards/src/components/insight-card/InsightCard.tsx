@@ -42,7 +42,7 @@ export const InsightCard = React.memo(
               {subtitle}
             </Flex>
           </Flex>
-          <Icons.play />
+          <Icons.Play />
         </Flex>
       </Flex>
     );

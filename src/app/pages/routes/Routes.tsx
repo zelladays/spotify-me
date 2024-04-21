@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Page } from "./Page";
 import { HomePage } from "../home";
+import { LoginPage } from "../login";
 
 export function NavigationRouter({ loggedIn }: { loggedIn: boolean }) {
   const location = useLocation();
@@ -18,7 +19,15 @@ export function NavigationRouter({ loggedIn }: { loggedIn: boolean }) {
             </Page>
           }
         />
-        <Route path="*" element={<Navigate replace to="/home" />} />
+        <Route
+          path="/login"
+          element={
+            <Page title="SpotifyMe - Login">
+              <LoginPage />
+            </Page>
+          }
+        />
+        <Route path="*" element={<Navigate replace to="/login" />} />
       </Routes>
     </AnimatePresence>
   );

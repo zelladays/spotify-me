@@ -3,14 +3,16 @@ import { NavigationRouter } from "./pages/routes/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "../config/reportWebVitals";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { theme } from "../libs/shared/theme";
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
-        <NavigationRouter loggedIn />
+        <Flex width="100vw" height="100vh">
+          <NavigationRouter loggedIn />
+        </Flex>
       </Router>
     </ChakraProvider>
   );
