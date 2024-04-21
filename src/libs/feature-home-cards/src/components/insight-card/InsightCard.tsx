@@ -1,6 +1,7 @@
 import { Flex, Image } from "@chakra-ui/react";
 import * as React from "react";
 import { useTheme } from "../../../../shared/theme";
+import { Icons } from "../../../../shared/assets";
 
 type InsightCardProps = {
   title: string;
@@ -31,13 +32,17 @@ export const InsightCard = React.memo(
           borderRadius={8}
           overflow="clip"
         />
-        <Flex flexDirection="column">
-          <Flex {...textStyles.h2_bold} color={colors.textPrimary}>
-            {title}
+        <Flex alignItems="center" justifyContent="space-between">
+          <Flex flexDirection="column">
+            <Flex {...textStyles.h2_bold} color={colors.textPrimary}>
+              {title}
+            </Flex>
+
+            <Flex {...textStyles.body1_400} color={colors.textSecondary}>
+              {subtitle}
+            </Flex>
           </Flex>
-          <Flex {...textStyles.body1_400} color={colors.textSecondary}>
-            {subtitle}
-          </Flex>
+          <Icons.play />
         </Flex>
       </Flex>
     );

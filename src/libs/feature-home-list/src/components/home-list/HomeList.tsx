@@ -12,7 +12,7 @@ type MyResItem = {
 };
 
 type MyRes = {
-  items: MyResItem[];
+  items?: MyResItem[];
 };
 
 export const HomeList = () => {
@@ -31,15 +31,15 @@ export const HomeList = () => {
         </Text>
       </Flex>
       <Flex flexDirection="column">
-        {data.items?.length > 0 ? (
-          data.items?.map((item) => (
+        {!data.items?.length ? (
+          <HomeListEmptyPlaceholder />
+        ) : (
+          data.items.map((item) => (
             <HomeListItem
               title={item.name}
               linkUrl={item.externalUrls.spotify}
             />
           ))
-        ) : (
-          <HomeListEmptyPlaceholder />
         )}
       </Flex>
     </Flex>
