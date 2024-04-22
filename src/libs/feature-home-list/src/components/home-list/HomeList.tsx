@@ -19,7 +19,7 @@ export const HomeList = () => {
   }, []);
 
   return (
-    <Flex flexDirection="column" gap="4" width="100%">
+    <Flex flexDirection="column" gap="4" width="100%" position="relative">
       <Flex flexDirection="column">
         <Text {...textStyles.h2_bold} color={colors.textPrimary}>
           Your Top Songs
@@ -28,7 +28,12 @@ export const HomeList = () => {
           In the past 4 weeks
         </Text>
       </Flex>
-      <Flex flexDirection="column">
+      <Flex
+        flexDirection="column"
+        overflowY="scroll"
+        maxHeight="600px"
+        pb="150px"
+      >
         {!topSongs?.length ? (
           <HomeListEmptyPlaceholder />
         ) : (
@@ -40,6 +45,14 @@ export const HomeList = () => {
           ))
         )}
       </Flex>
+      <Flex
+        position="absolute"
+        bottom={0}
+        width="100%"
+        height="100px"
+        bgColor={colors.brandBlack}
+        boxShadow={`0px 0px 30px 50px ${colors.brandBlack}`}
+      />
     </Flex>
   );
 };

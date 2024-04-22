@@ -5,7 +5,6 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "../config/reportWebVitals";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { theme } from "../libs/shared/theme";
-import axios from "axios";
 import { baseFetcher } from "../libs/data-access";
 
 function App() {

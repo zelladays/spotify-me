@@ -2,7 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import { Logo } from "../../../shared/ui";
 import { useTheme } from "../../../shared/theme";
 import { SpotifyButton } from "../components";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as React from "react";
 
 export const LoginPageScreen = () => {
