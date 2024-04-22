@@ -39,6 +39,7 @@ export const HomeList = () => {
         ) : (
           topSongs.map((item, index) => (
             <HomeListItem
+              key={item.id}
               title={`${index + 1}) ${item.artists[0].name} - ${item.name}`}
               linkUrl={item.external_urls.spotify}
             />
