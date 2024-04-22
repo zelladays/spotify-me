@@ -11,18 +11,18 @@ export const HomeList = () => {
   const [topSongs, setTopSongs] = React.useState<SpotifyTrack[] | null>(null);
 
   React.useEffect(() => {
-    baseFetcher("https://api.spotify.com/v1/me/top/tracks?limit=25").then(
-      (response) => {
-        setTopSongs(response.data.items);
-      }
-    );
+    baseFetcher(
+      "https://api.spotify.com/v1/me/top/tracks?limit=25&time_range=short_term"
+    ).then((response) => {
+      setTopSongs(response.data.items);
+    });
   }, []);
 
   return (
     <Flex flexDirection="column" gap="4" width="100%">
       <Flex flexDirection="column">
         <Text {...textStyles.h2_bold} color={colors.textPrimary}>
-          Most Streamed Artist
+          Your Top Songs
         </Text>
         <Text {...textStyles.body1_400} color={colors.textSecondary}>
           In the past 4 weeks
