@@ -5,8 +5,32 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "../config/reportWebVitals";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { theme } from "../libs/shared/theme";
+import axios from "axios";
+import { baseFetcher } from "../libs/data-access";
 
 function App() {
+  React.useEffect(() => {
+    const ACCESS_TOKEN = localStorage.getItem("SPOTIFY_ACCESS_TOKEN");
+    if (!ACCESS_TOKEN && window.location.pathname !== "/login") {
+      window.location.href = "/login";
+      return;
+    }
+
+    async function checkToken() {
+      const response = await baseFetcher("https://api.spotify.com/v1/me");
+
+      if (response.status !== 200 && window.location.pathname !== "/login") {
+        window.location.href = "/login";
+      }
+    }
+
+    checkToken().catch((e) => {
+      if (window.location.pathname !== "/login") {
+        window.location.href = "/login";
+      }
+    });
+  });
+
   return (
     <ChakraProvider theme={theme}>
       <Router>
