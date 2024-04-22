@@ -23,6 +23,11 @@ export const InsightCard = React.memo(
         gap="2.5"
         borderRadius={8}
         bgColor={colors.brandDarkGrey}
+        transition="0.2s ease-in-out"
+        _hover={{
+          boxShadow: `0px 0px 2px ${colors.brandGreen}`,
+          transform: "scale(1.02)",
+        }}
       >
         <Image
           src={imageUrl}
