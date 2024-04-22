@@ -7,7 +7,7 @@ import { v4 } from "uuid";
 const STATE = v4();
 const KEY = "SPOTIFY_AUTH_STATE";
 
-const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&state=${STATE}&redirect_uri=${window.location.origin}/login`;
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&state=${STATE}&scope=user-top-read&redirect_uri=${window.location.origin}/login`;
 
 localStorage.setItem(KEY, STATE);
 

@@ -2,23 +2,21 @@ import { Flex, Text } from "@chakra-ui/react";
 import { HomeListItem } from "../home-list-item";
 import { useTheme } from "../../../../shared/theme";
 import { HomeListEmptyPlaceholder } from "../home-list-empty-placeholder";
-
-type MyResItem = {
-  name: string;
-  artists: [name: string];
-  externalUrls: {
-    spotify: string;
-  };
-};
-
-type MyRes = {
-  items?: MyResItem[];
-};
+import { SpotifyTrack } from "../../../../data-access-types";
+import * as React from "react";
+import { baseFetcher } from "../../../../data-access";
 
 export const HomeList = () => {
   const { textStyles, colors } = useTheme();
+  const [topSongs, setTopSongs] = React.useState<SpotifyTrack[] | null>(null);
 
-  const data = {} as MyRes;
+  React.useEffect(() => {
+    baseFetcher("https://api.spotify.com/v1/me/top/tracks?limit=25").then(
+      (response) => {
+        setTopSongs(response.data.items);
+      }
+    );
+  }, []);
 
   return (
     <Flex flexDirection="column" gap="4" width="100%">
@@ -31,13 +29,13 @@ export const HomeList = () => {
         </Text>
       </Flex>
       <Flex flexDirection="column">
-        {!data.items?.length ? (
+        {!topSongs?.length ? (
           <HomeListEmptyPlaceholder />
         ) : (
-          data.items.map((item) => (
+          topSongs.map((item, index) => (
             <HomeListItem
-              title={item.name}
-              linkUrl={item.externalUrls.spotify}
+              title={`${index + 1}) ${item.artists[0].name} - ${item.name}`}
+              linkUrl={item.external_urls.spotify}
             />
           ))
         )}

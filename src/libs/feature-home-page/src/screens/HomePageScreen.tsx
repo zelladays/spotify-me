@@ -5,7 +5,7 @@ import { Logo } from "../../../shared/ui";
 
 export const HomePageScreen = () => {
   return (
-    <Flex flexDirection="column" p="16" gap="8">
+    <Flex flexDirection="column" p="16" gap="8" width="100%">
       <Flex justifyContent="space-between">
         <Logo />
         <Button>Log Out</Button>
