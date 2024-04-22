@@ -1,6 +1,6 @@
-# 🎵 Spotify Me
+# 🎵 SpotifyMe
 
-Spotify Me is a web application that displays your top songs and artists from Spotify. It provides a fun and interactive way to explore your music preferences!
+SpotifyMe is a simple web application that displays your top songs and artists from Spotify!
 
 ## 🚀 Getting Started
 
@@ -12,7 +12,7 @@ To run the application locally, you will need to have Node.js and npm installed 
 4. Obtain a Spotify client ID by creating a Spotify Developer account and registering a new application.
 5. Create a `.env` file in the project root directory and add your client ID as follows:
    ```
-   REACT_APP_SPOTIFY_CLIENT_ID=your_client_id_here
+   REACT_APP_CLIENT_ID=your_client_id_here
    ```
 6. Start the application by running the command `npm start`.
 7. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
@@ -21,14 +21,9 @@ Alternatively, you can visit the deployed version of the application at [sptfyme
 
 ## 🎶 Features
 
-- View your top songs and artists from Spotify.
-- Interact with the music player to play, pause, and skip tracks.
-- Explore detailed information about each song and artist.
+- View your top song and artist from Spotify.
+- View a list of your top songs over the past 4 weeks.
 
 ## 📚 Learn More
 
-To learn more about React, check out the [React documentation](https://reactjs.org/).
-
-For more information on how to use the Spotify API and retrieve user data, refer to the [Spotify Web API documentation](https://developer.spotify.com/documentation/web-api/).
-
-Enjoy exploring your Spotify music with Spotify Me! 🎧🎉
+Enjoy exploring your Spotify music with SpotifyMe! 🎧🎉
