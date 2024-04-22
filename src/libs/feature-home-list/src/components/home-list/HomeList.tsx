@@ -32,6 +32,7 @@ export const HomeList = () => {
         flexDirection="column"
         overflowY="scroll"
         maxHeight="600px"
+        width="100%"
         pb="150px"
       >
         {!topSongs?.length ? (

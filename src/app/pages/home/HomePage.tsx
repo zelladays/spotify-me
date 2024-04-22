@@ -1,5 +1,10 @@
 import { HomePageScreen } from "../../../libs/feature-home-page";
+import { AnimateScreen } from "../animate";
 
 export const HomePage = () => {
-  return <HomePageScreen />;
+  return (
+    <AnimateScreen>
+      <HomePageScreen />
+    </AnimateScreen>
+  );
 };
