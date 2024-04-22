@@ -4,6 +4,7 @@ import { useTheme } from "../../../../shared/theme";
 import * as React from "react";
 import { baseFetcher } from "../../../../data-access";
 import { SpotifyArtistItem, SpotifyTrack } from "../../../../data-access-types";
+import { capitaliseEachWord } from "../../../../shared/utils";
 
 export const InsightSummary = () => {
   const [mostStreamedArtist, setMostStreamedArtist] =
@@ -31,7 +32,9 @@ export const InsightSummary = () => {
 
     return {
       title: mostStreamedArtist.name,
-      subtitle: mostStreamedArtist.genres.join(", "),
+      subtitle: capitaliseEachWord(
+        mostStreamedArtist.genres.slice(0, 3).join(", ")
+      ),
       imageUrl: mostStreamedArtist.images[0].url,
       linkUrl: mostStreamedArtist.external_urls.spotify,
     };
