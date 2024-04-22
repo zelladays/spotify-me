@@ -24,7 +24,7 @@ export const LoginPageScreen = () => {
             Get insights on what you listen to.
           </Text>
         </Flex>
-        <SpotifyButton onClick={() => {}} />
+        <SpotifyButton />
       </Flex>
     </Flex>
   );

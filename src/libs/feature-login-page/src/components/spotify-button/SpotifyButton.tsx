@@ -2,16 +2,22 @@ import { Button, Text } from "@chakra-ui/react";
 import React from "react";
 import { useTheme } from "../../../../shared/theme";
 import { Icons } from "../../../../shared/assets";
+import { v4 } from "uuid";
 
-type SpotifyButtonProps = {
-  onClick: () => void;
-};
+const STATE = v4();
+const KEY = "SPOTIFY_AUTH_STATE";
 
-export const SpotifyButton = React.memo(({ onClick }: SpotifyButtonProps) => {
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&state=${STATE}&redirect_uri=${window.location.origin}/home`;
+
+localStorage.setItem(KEY, STATE);
+
+export const SpotifyButton = React.memo(() => {
   const { textStyles, colors } = useTheme();
+
   return (
     <Button
-      onClick={onClick}
+      as="a"
+      href={AUTH_URL}
       p="8"
       borderRadius={8}
       bgColor={colors.brandGreen}
