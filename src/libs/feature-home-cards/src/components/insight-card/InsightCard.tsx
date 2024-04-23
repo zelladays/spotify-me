@@ -19,8 +19,10 @@ export const InsightCard = React.memo(
         as="a"
         href={linkUrl}
         flexDirection="column"
-        p="4"
+        p={["4", "6", "4"]}
         gap="2.5"
+        maxWidth={["100%", "100%", "332px"]}
+        height="auto"
         borderRadius={8}
         bgColor={colors.brandDarkGrey}
         transition="0.2s ease-in-out"
@@ -32,8 +34,10 @@ export const InsightCard = React.memo(
         <Image
           src={imageUrl}
           alt={title}
-          maxWidth="300px"
-          maxHeight="300px"
+          minWidth="300px"
+          maxWidth={["100%", "100%", "300px"]}
+          minHeight="300px"
+          maxHeight={["100%", "100%", "300px"]}
           borderRadius={8}
           overflow="clip"
         />

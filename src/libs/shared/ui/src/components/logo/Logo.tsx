@@ -5,7 +5,7 @@ export const Logo = () => {
   const { colors, textStyles } = useTheme();
 
   return (
-    <Text {...textStyles.h1} pointerEvents="none">
+    <Text {...textStyles.h1} pointerEvents="none" alignItems="center">
       <Text as="span" color={colors.brandGreen}>
         Spotify
       </Text>

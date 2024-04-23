@@ -52,9 +52,9 @@ export const InsightSummary = () => {
   }, [mostStreamedSong]);
 
   return (
-    <Flex gap="8">
-      <Flex flexDirection="column" gap="4">
-        <Flex flexDirection="column">
+    <Flex gap="8" flexDirection={["column", "column", "row"]}>
+      <Flex flexDirection="column" gap="6">
+        <Flex flexDirection="column" gap="2">
           <Text {...textStyles.h2_bold} color={colors.textPrimary}>
             Most Streamed Artist
           </Text>
@@ -65,8 +65,8 @@ export const InsightSummary = () => {
         {artistConfig && <InsightCard {...artistConfig} />}
       </Flex>
 
-      <Flex flexDirection="column" gap="4">
-        <Flex flexDirection="column">
+      <Flex flexDirection="column" gap="6">
+        <Flex flexDirection="column" gap="2">
           <Text {...textStyles.h2_bold} color={colors.textPrimary}>
             Most Played Song
           </Text>

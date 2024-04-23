@@ -3,7 +3,7 @@ import { NavigationRouter } from "./pages/routes/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "../config/reportWebVitals";
-import { ChakraProvider, Flex, Text } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { theme } from "../libs/shared/theme";
 import { baseFetcher } from "../libs/data-access";
 
@@ -33,23 +33,8 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
-        <Flex width="100vw" height="100vh" position="relative">
+        <Flex width="100vw" height="100vh" flexDirection="column">
           <NavigationRouter loggedIn />
-          <Text
-            as="a"
-            position="absolute"
-            bottom={0}
-            right={0}
-            color="rgba(255, 255, 255, 0.37)"
-            href="https://github.com/zelladays/spotify-me"
-            mb="1"
-            mr="1"
-            _hover={{
-              color: "rgba(255, 255, 255, 0.87)",
-            }}
-          >
-            Developed by @LuckyWest
-          </Text>
         </Flex>
       </Router>
     </ChakraProvider>

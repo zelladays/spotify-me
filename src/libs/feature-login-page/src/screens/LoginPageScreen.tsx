@@ -37,13 +37,17 @@ export const LoginPageScreen = () => {
       <Flex
         flexDirection="column"
         bgColor={colors.brandDarkGrey}
-        p="16"
-        gap="6"
+        p={["8", "16"]}
+        gap={["4", "6"]}
         borderRadius={8}
         alignItems="center"
         justifyContent="center"
       >
-        <Flex flexDirection="column">
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Logo />
           <Text {...textStyles.body1_400} color={colors.textSecondary}>
             Get insights on what you listen to.
