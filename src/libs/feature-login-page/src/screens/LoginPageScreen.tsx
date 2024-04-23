@@ -37,7 +37,7 @@ export const LoginPageScreen = () => {
       <Flex
         flexDirection="column"
         bgColor={colors.brandDarkGrey}
-        p={["8", "16"]}
+        p={["12", "16"]}
         gap={["4", "6"]}
         borderRadius={8}
         alignItems="center"

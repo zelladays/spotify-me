@@ -18,7 +18,7 @@ export const SpotifyButton = React.memo(() => {
     <Button
       as="a"
       href={AUTH_URL}
-      p={["2", "8"]}
+      p={["6", "8"]}
       borderRadius={8}
       bgColor={colors.brandGreen}
       gap="2.5"
