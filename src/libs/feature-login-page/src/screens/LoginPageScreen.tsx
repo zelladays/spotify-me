@@ -50,7 +50,7 @@ export const LoginPageScreen = () => {
         >
           <Logo />
           <Text {...textStyles.body1_400} color={colors.textSecondary}>
-            Get insights on what you listen to.
+            Get insights on what you listen to on Spotify.
           </Text>
         </Flex>
         <SpotifyButton />

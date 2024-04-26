@@ -7,10 +7,10 @@ export const Logo = () => {
   return (
     <Text {...textStyles.h1} pointerEvents="none" alignItems="center">
       <Text as="span" color={colors.brandGreen}>
-        Spotify
+        Top
       </Text>
       <Text as="span" color={colors.textPrimary}>
-        Me.
+        Stats.
       </Text>
     </Text>
   );
