@@ -1,6 +1,7 @@
 # 🎵 SpotifyMe
 
 SpotifyMe is a simple web application that displays your top songs and artists from Spotify!
+<img width="1437" alt="image" src="https://github.com/zelladays/spotify-me/assets/52856016/8f1cca0e-984d-422f-be05-702341e17678">
 
 ## 🚀 Getting Started
 
